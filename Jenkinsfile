@@ -23,7 +23,7 @@ pipeline {
         stage("mavenBuild"){
             steps{
                 script{
-                    def mvnHome = '/usr/local/apache-maven-3.6.0'
+                    def mvnHome = tool 'M3'
                  sh "${mvnHome}/bin/mvn  clean package "
                 }
             }
