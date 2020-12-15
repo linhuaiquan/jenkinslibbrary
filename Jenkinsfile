@@ -20,5 +20,13 @@ pipeline {
                 }
             }
         }
+        stage("mavenBuild"){
+            steps{
+                script{
+                    def mvnHome = '/usr/local/apache-maven-3.6.0'
+                 sh "${mvnHome}/bin/mvn  clean package "
+                }
+            }
+        }
     }
 }
